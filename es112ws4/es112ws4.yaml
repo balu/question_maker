@@ -1,0 +1,123 @@
+---
+description: |
+  What is \lstinline{"1234" > "23"}?
+
+options:
+  - \lstinline{False}
+  - \lstinline{True}
+  - Error
+  - \lstinline{"23"}
+
+marks: \half
+---
+description: |
+  What is \lstinline{len(2345)}?
+
+options:
+  - Error
+  - 4
+  - 2345
+  - 0
+
+marks: \half
+---
+description: |
+  What is \lstinline{"0"[1]}?
+
+options:
+  - Error
+  - \lstinline{"0"}
+  - \lstinline{""}
+  - \lstinline{"1"}
+
+marks: \half
+---
+description: |
+  What is the result of the following code?
+  
+  \begin{lstlisting}
+  def infinity(x):
+      return x/0
+  \end{lstlisting}
+
+options:
+  - Nothing
+  - \lstinline{inf}
+  - \lstinline{0}
+  - Error
+
+marks: \half
+---
+description: |
+  What is the result of the expression \lstinline{"Hello, World!"[1:4]}?
+
+options:
+  - \lstinline{"ell"}
+  - \lstinline{"Hell"}
+  - \lstinline{"ello"}
+  - \lstinline{"Hel"}
+
+marks: \half
+---
+description: |
+  What is the result of \lstinline{" ".join(["Hello", "World"])}?
+
+options:
+  - \lstinline{"Hello World"}
+  - \lstinline{"Hello World "}
+  - \lstinline{"HelloWorld"}
+  - \lstinline{"Hello, World"}
+
+marks: \half
+---
+description: |
+  What is \lstinline{len([[1, 2], 3])}?
+
+options:
+  - 2
+  - 3
+  - 1
+  - 4
+
+marks: \half
+---
+description: |
+  What is the output of the following code?
+  
+  \begin{lstlisting}
+  x = [1] * 2
+  y = x * 2
+  print(x, y)
+  \end{lstlisting}
+
+options:
+  - \lstinline{[1, 1] [1, 1, 1, 1]}
+  - \lstinline{[1, 1, 1, 1] [1, 1, 1, 1]}
+  - \lstinline{[1, 1, 1, 1] [1, 1]}
+  - \lstinline{[1, 1] [1, 1]}
+
+marks: \half
+---
+description: |
+  The variables \lstinline{hh} and \lstinline{mm} contains time (hours and minutes respectively) in 24-hour format. The following code was written to convert it into 12-hour format with \lstinline{s} being either \lstinline{"am"} or \lstinline{"pm"}. List errors in the code and fix it.
+  
+  \begin{lstlisting}
+  if hh >= 12:
+      hh = hh - 12
+  if hh >= 12:
+      s = "pm"
+  # Note the variable mm is unmodified.
+  \end{lstlisting}
+
+marks: 2
+---
+description: |
+  The following is not equivalent to \lstinline{s = " ".join(xs)}? Why? Write the correct version using \lstinline{for}.
+  
+  \begin{lstlisting}
+  s = ""
+  for x in xs:
+      s = s + " " + x
+  \end{lstlisting}
+
+marks: 2
