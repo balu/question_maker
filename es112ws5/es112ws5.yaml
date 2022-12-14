@@ -87,12 +87,12 @@ description: |
   \end{lstlisting}
 
 options:
-  - \lstline{1}
+  - \lstinline{1}
   - Error
   - \lstinline{3}
   - \lstinline{0}
   - None
-  - \lstline(23)
+  - \lstinline{23}
 
 marks: \half
 ---
@@ -109,8 +109,8 @@ options:
   - Error
   - \lstinline{5}
   - \lstinline{3}
-  - \lstline{[0, 1, 2, 0, 1]}
-  - \lstline{[[0, 1, 2], [0, 1]]}
+  - \lstinline{[0, 1, 2, 0, 1]}
+  - \lstinline{[[0, 1, 2], [0, 1]]}
 
 marks: \half
 ---
@@ -126,13 +126,13 @@ description: |
   \end{lstlisting}
 
 options:
-  - \lstline{3 3}
+  - \lstinline{3 3}
   - \lstinline{6}
   - \lstinline{4}
   - Error
-  - \lstline{3 0}
-  - \lstline{3 None}
-  - \lstline{None None}
+  - \lstinline{3 0}
+  - \lstinline{3 None}
+  - \lstinline{None None}
 
 
 marks: \half
@@ -148,39 +148,37 @@ description: |
   \end{lstlisting}
 
 options:
-  - \lstline{3}
+  - \lstinline{3}
   - Error
   - \lstinline{4}
   - None
-  - \lstline{5}
-  - \lstline{6}
-  - \lstline{None None None}
+  - \lstinline{5}
+  - \lstinline{6}
+  - \lstinline{None None None}
 
 
 marks: \half
 ---
 description: |
   What is the result of the following code?
-  
   \begin{lstlisting}
   def f(x):
     return x[1:]
   def g(x):
     return f(x[1:])
-
   z = "hello"
   print(f(z), g(z))
   \end{lstlisting}
 
 options:
-  - \lstline{ello llo}
+  - \lstinline{ello llo}
   - Error
   - \lstinline{ello ello}
   - None
-  - \lstline{llo llo}
-  - \lstline{llo lo}
-  - \lstline{0 1}
-  - \lstline{1 2}
+  - \lstinline{llo llo}
+  - \lstinline{llo lo}
+  - \lstinline{0 1}
+  - \lstinline{1 2}
 
 
 
@@ -188,7 +186,6 @@ marks: \half
 ---
 description: |
   What is the result of the following code?
-  
   \begin{lstlisting}
   x = 10
   y = 5
@@ -199,7 +196,7 @@ description: |
   \end{lstlisting}
 
 options:
-  - \lstline{[[[10], 10, [10]], 5]}
+  - \lstinline{[[[10], 10, [10]], 5]}
   - Error
   - \lstinline{[10, 10, 10, 5]}
   - None
@@ -211,15 +208,8 @@ options:
 marks: \half
 ---
 description: |
-  You wrote a function works correctly for the following set of inputs
-  Input: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-  Expected Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-  But, does not work as intended for the next set of inputs
-  Input: [[1, 2, 3], [4], 5, 5.5, False]
-  Expected Output: [1, 2, 3, 4, 5, 5.5, False]
-
-  Correct the following function so that it works correctly for the second set of inputs
+  The below function tries to flatten a nested list. For an input: [[1, 2, 3], [4], 5, 5.5, False]. The expected Output: [1, 2, 3, 4, 5, 5.5, False]
+  List the error in the following function and write the corrected function.
 
   \begin{lstlisting}
   def flatten_list(l):
@@ -232,3 +222,25 @@ description: |
 
 marks: 2
 ---
+description: |
+  What is the output of the following program? Explain.
+
+  \begin{lstlisting}
+  x = 0.3
+  y = x==0.2 + 0.1
+  print(y)
+  \end{lstlisting}
+
+marks: \half
+---
+description: |
+  What is the output of the following program? Explain.
+
+  \begin{lstlisting}
+  x = 0.3
+  y = x==0.2 + 0.1
+  print(y)
+  \end{lstlisting}
+
+marks: 1
+
