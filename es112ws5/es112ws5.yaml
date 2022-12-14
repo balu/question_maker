@@ -1,0 +1,234 @@
+---
+description: |
+  What is the result of the following code
+  
+  \begin{lstlisting}
+  x = 10.0
+  for x in range(2):
+    print(x, end=",")
+    x = x + 1
+    print(x, end=",")
+
+  \end{lstlisting}
+  
+
+options:
+  - \lstinline{0,1,1,2,}
+  - \lstinline{0,1,1,2}
+  - \lstinline{10,10,10,10,}
+  - \lstinline{10,10,10,10}
+  - \lstinline{10,11,12,13}
+
+
+marks: \half
+---
+description: |
+  What is the result of the following code
+  
+  \begin{lstlisting}
+  x = 4
+  def f(x):
+    for i in range(x):
+        if i % 3 == 1 or i % 5 == 1:
+            return i
+        print(i, end=" ")
+  print(f(1), f(5))
+
+  \end{lstlisting}
+  
+
+options:
+  - \lstinline{0 0 None 1}
+  - \lstinline{0 0}
+  - \lstinline{None None None None}
+  - \lstinline{1 1 1 1}
+  - \lstinline{0 None 1 None}
+  - \lstinline{Syntax Error}
+
+
+marks: \half
+---
+description: |
+  What is the result of the following code
+  
+  \begin{lstlisting}
+  def g(x):
+    return x % 2 == 1
+  def f(x):
+    s = 0
+    for i in range(x):
+        if g(i):
+            s = s + i
+    return s
+  print(f(1), f(6)) 
+  \end{lstlisting}
+  
+
+options:
+  - \lstinline{0 9}
+  - \lstinline{0}
+  - \lstinline{Error}
+  - \lstinline{1 6}
+  - \lstinline{s}
+  - \lstinline{None}
+  - \lstinline{0, 6}
+  - \lstinline{6, 0}
+
+
+marks: \half
+---
+description: |
+  What is the result of the following code?
+  
+  \begin{lstlisting}
+  xs = range(10)
+  ys = range(xs[1], xs[2])
+  print(sum(ys))
+  \end{lstlisting}
+
+options:
+  - \lstline{1}
+  - Error
+  - \lstinline{3}
+  - \lstinline{0}
+  - None
+  - \lstline(23)
+
+marks: \half
+---
+description: |
+  What is the result of the following code?
+  
+  \begin{lstlisting}
+  xs = range(3)
+  ys = range(2)
+  print(xs + ys)
+  \end{lstlisting}
+
+options:
+  - Error
+  - \lstinline{5}
+  - \lstinline{3}
+  - \lstline{[0, 1, 2, 0, 1]}
+  - \lstline{[[0, 1, 2], [0, 1]]}
+
+marks: \half
+---
+description: |
+  What is the result of the following code?
+  
+  \begin{lstlisting}
+  xs = range(3)
+  x = sum(xs)
+  y = sum(xs)
+
+  print(x, y)
+  \end{lstlisting}
+
+options:
+  - \lstline{3 3}
+  - \lstinline{6}
+  - \lstinline{4}
+  - Error
+  - \lstline{3 0}
+  - \lstline{3 None}
+  - \lstline{None None}
+
+
+marks: \half
+---
+description: |
+  What is the result of the following code?
+  
+  \begin{lstlisting}
+  xs = range(3)
+  ys = list(xs) + list(xs)
+  print(sum(ys[1:4]))
+
+  \end{lstlisting}
+
+options:
+  - \lstline{3}
+  - Error
+  - \lstinline{4}
+  - None
+  - \lstline{5}
+  - \lstline{6}
+  - \lstline{None None None}
+
+
+marks: \half
+---
+description: |
+  What is the result of the following code?
+  
+  \begin{lstlisting}
+  def f(x):
+    return x[1:]
+  def g(x):
+    return f(x[1:])
+
+  z = "hello"
+  print(f(z), g(z))
+  \end{lstlisting}
+
+options:
+  - \lstline{ello llo}
+  - Error
+  - \lstinline{ello ello}
+  - None
+  - \lstline{llo llo}
+  - \lstline{llo lo}
+  - \lstline{0 1}
+  - \lstline{1 2}
+
+
+
+marks: \half
+---
+description: |
+  What is the result of the following code?
+  
+  \begin{lstlisting}
+  x = 10
+  y = 5
+  x = [x]
+  x = [x] + x + [x]
+  z = [x, y]
+  print(z)
+  \end{lstlisting}
+
+options:
+  - \lstline{[[[10], 10, [10]], 5]}
+  - Error
+  - \lstinline{[10, 10, 10, 5]}
+  - None
+  - \lstinline{[[10], [10], [10], [5]]}
+  - \lstinline{[[10], [10], [10], 5]}
+  - \lstinline{[[10], [10], [10]], 5]}
+
+
+marks: \half
+---
+description: |
+  You wrote a function works correctly for the following set of inputs
+  Input: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  Expected Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+  But, does not work as intended for the next set of inputs
+  Input: [[1, 2, 3], [4], 5, 5.5, False]
+  Expected Output: [1, 2, 3, 4, 5, 5.5, False]
+
+  Correct the following function so that it works correctly for the second set of inputs
+
+  \begin{lstlisting}
+  def flatten_list(l):
+    out = []
+    for item in l:
+        for subitem in item:
+            out.append(subitem)
+    return out
+  \end{lstlisting}
+
+marks: 2
+---
