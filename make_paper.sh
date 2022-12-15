@@ -1,5 +1,7 @@
 cd $1
-python ../q.py $1.yaml
+yamlfile=$1.yaml
+shift
+python ../q.py $yamlfile "$@"
 touch q.log
 for i in *.tex
 do
@@ -8,7 +10,7 @@ do
     echo $i > /dev/stderr
 done
 
-gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=qp.pdf -dBATCH -c "[ /Title ($1) /DOCINFO pdfmark" -f *[A-Z].pdf > /dev/null 2>&1
+gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=qp.pdf -dBATCH -c "[ /Title ($yamlfile) /DOCINFO pdfmark" -f *[A-Z].pdf > /dev/null 2>&1
 rm *.log *.aux *.tex
 rm *[A-Z].pdf
 cd ..

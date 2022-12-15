@@ -5,8 +5,7 @@ import sys
 import yaml
 from yaml import CLoader as Loader
 
-random.seed(15122022)
-
+KEYNAMES = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 def randomize(paper):
     random.shuffle(paper)
@@ -16,9 +15,7 @@ def randomize(paper):
             random.shuffle(perm)
             q["perm"] = perm
 
-
 paper = list(yaml.load_all(open(sys.argv[1], "r"), Loader=Loader))
-
 
 def preamble(outfile):
     outfile.write(
@@ -37,22 +34,17 @@ def preamble(outfile):
     """
     )
 
-
 def postamble(outfile):
-    outfile.write(
-        r"""
-    \end{document}
-    """
-    )
-
+    outfile.write(r"""\end{document}""")
 
 def writeout(paper, key):
     outfile = open(f"{os.path.splitext(sys.argv[1])[0]}{key}.tex", "w")
     preamble(outfile)
-    outfile.write(f"\\framebox{{\\huge\\bf {key}}}\\\\")
-    outfile.write(r"\framebox{\numpoints\ points.}")
+    keybox = f"\\framebox{{\\huge\\sc {key}}}"
+    pointbox = r"\framebox{\huge \sc \numpoints\ points}"
+    outfile.write(f"\\hbox{{{keybox} {pointbox}}}")
     outfile.write(
-        r"""
+    r"""
     \begin{tabular}{ll}
     Full Name&\underline{\phantom{xxxxxxxxxxxxxxx}}\\
     Section \& Subsection &\underline{\phantom{xxxxxxxxxxxxxxx}}\\
@@ -62,7 +54,6 @@ def writeout(paper, key):
     \lstset{language=Python,basicstyle=\ttfamily}
     """
     )
-
     outfile.write(r"\begin{questions}")
     for q in paper:
         outfile.write(f"\\question[{q['marks']}] {q['description']}\n")
@@ -74,21 +65,25 @@ def writeout(paper, key):
     outfile.write(r"\end{questions}")
     postamble(outfile)
 
-
 keyfile = open("keyfile.txt", "w")
 
-
-def write_key(paper):
-    for q in paper:
+def write_key(paper, k):
+    keyfile.write(f"{k}:")
+    for i, q in enumerate(paper):
         if "options" in q:
-            keyfile.write(f"{'ABCDEFGH'[q['perm'].index(0)]}")
+            keyfile.write(f" ({i+1}) {KEYNAMES[q['perm'].index(0)]}")
+    keyfile.write("\n")
 
-
-for k in "ABCDEFGHIJKLMN"[:2]:
+nkeys = 14
+seed  = 0XABCDEF
+if len(sys.argv) >= 3:
+    seed = int(sys.argv[2])
+if len(sys.argv) >= 4:
+    nkeys = int(sys.argv[3])
+random.seed(seed)
+for k in KEYNAMES[:nkeys]:
     randomize(paper)
     writeout(paper, k)
-    keyfile.write(f"{k}: ")
-    write_key(paper)
-    keyfile.write("\n")
+    write_key(paper, k)
 
 keyfile.close()

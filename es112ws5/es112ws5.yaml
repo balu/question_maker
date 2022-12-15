@@ -1,16 +1,15 @@
 ---
 description: |
-  What is the result of the following code
-  
+  What is the result of the following code?
+
   \begin{lstlisting}
   x = 10.0
   for x in range(2):
-    print(x, end=",")
-    x = x + 1
-    print(x, end=",")
+      print(x, end=",")
+      x = x + 1
+      print(x, end=",")
 
   \end{lstlisting}
-  
 
 options:
   - \lstinline{0,1,1,2,}
@@ -19,23 +18,20 @@ options:
   - \lstinline{10,10,10,10}
   - \lstinline{10,11,12,13}
 
-
 marks: \half
 ---
 description: |
   What is the result of the following code
-  
+
   \begin{lstlisting}
   x = 4
   def f(x):
-    for i in range(x):
-        if i % 3 == 1 or i % 5 == 1:
-            return i
-        print(i, end=" ")
+      for i in range(x):
+          if i % 3 == 1 or i % 5 == 1:
+              return i
+          print(i, end=" ")
   print(f(1), f(5))
-
   \end{lstlisting}
-  
 
 options:
   - \lstinline{0 0 None 1}
@@ -45,24 +41,22 @@ options:
   - \lstinline{0 None 1 None}
   - \lstinline{Syntax Error}
 
-
 marks: \half
 ---
 description: |
   What is the result of the following code
-  
+
   \begin{lstlisting}
   def g(x):
-    return x % 2 == 1
+      return x % 2 == 1
   def f(x):
-    s = 0
-    for i in range(x):
-        if g(i):
-            s = s + i
-    return s
+      s = 0
+      for i in range(x):
+          if g(i):
+              s = s + i
+      return s
   print(f(1), f(6)) 
   \end{lstlisting}
-  
 
 options:
   - \lstinline{0 9}
@@ -74,12 +68,11 @@ options:
   - \lstinline{0, 6}
   - \lstinline{6, 0}
 
-
 marks: \half
 ---
 description: |
   What is the result of the following code?
-  
+
   \begin{lstlisting}
   xs = range(10)
   ys = range(xs[1], xs[2])
@@ -144,7 +137,6 @@ description: |
   xs = range(3)
   ys = list(xs) + list(xs)
   print(sum(ys[1:4]))
-
   \end{lstlisting}
 
 options:
@@ -208,16 +200,15 @@ options:
 marks: \half
 ---
 description: |
-  The below function tries to flatten a nested list. For an input: [[1, 2, 3], [4], 5, 5.5, False]. The expected Output: [1, 2, 3, 4, 5, 5.5, False]
-  List the error in the following function and write the corrected function.
+  The below function tries to flatten a nested list. For an input: \lstinline{[[1, 2, 3], [4], 5, 5.5, False]}, the expected output is \lstinline{[1, 2, 3, 4, 5, 5.5, False]}. Identify the error in the following function and write the corrected function.
 
   \begin{lstlisting}
   def flatten_list(l):
-    out = []
-    for item in l:
-        for subitem in item:
-            out.append(subitem)
-    return out
+      out = []
+      for item in l:
+          for subitem in item:
+              out.append(subitem)
+      return out
   \end{lstlisting}
 
 marks: 2
@@ -237,9 +228,15 @@ description: |
   What is the output of the following program? Explain.
 
   \begin{lstlisting}
-  x = 0.3
-  y = x==0.2 + 0.1
-  print(y)
+    def f(x):
+        def g(y):
+            x.append(y)
+        return g
+    xs = []
+    h = f(xs)
+    for i in range(1, 5):
+        h(i)
+    print(xs)
   \end{lstlisting}
 
 marks: 1
