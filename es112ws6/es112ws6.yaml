@@ -90,3 +90,33 @@ options:
   - \lstinline{0 0 10}
 
 marks: \half
+---
+description: |
+  What is the result of the following code?
+
+  \begin{lstlisting}
+  count = 0
+  for i in range(5, 8):
+      for j in range(2, i):
+          count = count + 1
+          if i%j == 0:
+              continue
+  print(count)
+  \end{lstlisting}
+
+marks: \half
+---
+description: |
+  What is the result of the following code?
+
+  \begin{lstlisting}
+  count = 0
+  for i in range(5, 8):
+      for j in range(2, i):
+          count = count + 1
+          if i%j == 0:
+              break
+  print(count)
+  \end{lstlisting}
+
+marks: \half
