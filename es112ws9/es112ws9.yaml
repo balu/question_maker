@@ -1,0 +1,267 @@
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  xs = [].extend([1, 2])
+  print(xs)
+  \end{lstlisting}
+
+options:
+  - \lstinline{None}
+  - \lstinline{[1, 2]}
+  - \lstinline{[[1, 2]]}
+  - \lstinline{Error}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  x, y = 2, 3
+  if x <= y:
+      x = x + y
+  if x > y:
+      x = x - y
+  print(x, y)
+  \end{lstlisting}
+
+options:
+  - \lstinline{2 3}
+  - \lstinline{5 3}
+  - \lstinline{Error}
+  - \lstinline{3 2}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  x, y = 2, 3
+  if x <= y:
+      x = x + y
+  elif x > y:
+      x = x - y
+  print(x, y)
+  \end{lstlisting}
+
+options:
+  - \lstinline{5 3}
+  - \lstinline{2 3}
+  - \lstinline{Error}
+  - \lstinline{3 2}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  x, y = 2, 3
+  if x <= y:
+      x = x + y
+  if x <= y:
+      x = x + y
+  else:
+      x = x - y
+  print(x, y)
+  \end{lstlisting}
+
+options:
+  - \lstinline{2 3}
+  - \lstinline{5 3}
+  - \lstinline{Error}
+  - \lstinline{3 2}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  x = 0
+  for y in range(1, 10):
+      if y % 2 == 0:
+          x = x + y
+      else:
+          x = x - y
+  print(x, y)
+  \end{lstlisting}
+
+options:
+  - \lstinline{-5 9}
+  - \lstinline{45 9}
+  - \lstinline{Error}
+  - \lstinline{5 3}
+
+marks: \half
+---
+description: |
+  What is \lstinline{[][0]}?
+
+options:
+  - \lstinline{Error}
+  - \lstinline{[]}
+  - \lstinline{[[]]}
+  - \lstinline{0}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  xs = []
+  ys = [xs]
+  ys[0].append(1)
+  print(xs, ys)
+  \end{lstlisting}
+
+options:
+  - \lstinline{[1] [[1]]}
+  - \lstinline{[1] [1]}
+  - \lstinline{Error}
+  - \lstinline{[] [[1]]}
+
+marks: \half
+---
+description: |
+  What is \lstinline{[1, 2, 3] == [2, 1, 3]}?
+
+options:
+  - \lstinline{False}
+  - \lstinline{True}
+  - \lstinline{Error}
+  - \lstinline{[1, 2, 3]}
+
+marks: \half
+---
+description: |
+  What is \verb|{1, 2, 3} == {2, 1, 3}|?
+
+options:
+  - \lstinline{True}
+  - \lstinline{False}
+  - \lstinline{Error}
+  - \lstinline{None}
+
+marks: \half
+---
+description: |
+  What is \lstinline{sum(range(1, 20))}?
+
+options:
+  - \lstinline{190}
+  - \lstinline{90}
+  - \lstinline{45}
+  - \lstinline{Error}
+  - \lstinline{210}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  xs = list(range(11, 0, -1))
+  ys = map(str, xs)
+  zs = "".join(ys)
+  print(int(zs) % 2)
+  \end{lstlisting}
+
+options:
+  - \lstinline{1}
+  - \lstinline{0}
+  - \lstinline{Error}
+  - \lstinline{None}
+
+marks: \half
+---
+description: |
+  What is printed assuming \lstinline{succ(n)} return n+1?
+
+  \begin{lstlisting}
+  xs = list(range(100))
+  ys = map(succ, xs)
+  print(sum(ys) + sum(ys))
+  \end{lstlisting}
+
+options:
+  - \lstinline{5050}
+  - \lstinline{10100}
+  - \lstinline{Error}
+  - \lstinline{0}
+
+marks: \half
+---
+description: |
+  What is \lstinline{"hello world"[20:-3:-2]}?
+
+options:
+  - \lstinline{"d"}
+  - \lstinline{"rld"}
+  - \lstinline{"dlr"}
+  - \lstinline{Error}
+  - \lstinline{None}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  x = 4
+  def f(y):
+      return x * x + 3
+  print(f(0) + f(1) + f(2))
+  \end{lstlisting}
+
+options:
+  - \lstinline{57}
+  - \lstinline{14}
+  - \lstinline{7}
+  - \lstinline{9}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  def f(x):
+      return x + x
+  def g(x):
+      return x * x
+  print(f(g(3)))
+  \end{lstlisting}
+
+options:
+  - \lstinline{18}
+  - \lstinline{12}
+  - \lstinline{9}
+  - \lstinline{36}
+  - \lstinline{Error}
+
+marks: \half
+---
+description: |
+  What is printed?
+
+  \begin{lstlisting}
+  x, y = 0, 1
+  while x < 100:
+      x, y = y, x + y
+  print(x)
+  \end{lstlisting}
+
+options:
+  - \lstinline{144}
+  - \lstinline{100}
+  - \lstinline{143}
+  - \lstinline{101}
+  - \lstinline{89}
+  - \lstinline{233}
+
+marks: \half

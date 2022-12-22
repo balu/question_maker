@@ -1,0 +1,129 @@
+---
+description: |
+  The following fragment of code was intended to be part of a telephone service provider (like BSNL). Initially, the exchange checks if the receiver of the call is busy, and if so must play a hold tone for the caller and retry the same process after playing it. The hold tone should be played for at most 5 minutes. If receiver is not busy, the caller should be connected to the receiver and the program terminates after disconnection.
+
+  The \lstinline{is_busy} function takes a user as parameter and returns whether they are busy currently or not. The \lstinline{play} function takes the name of a user, plays the hold tone for one minute to them, and returns. The \lstinline{connect} function takes two users as parameters, connects them if they are not busy, and returns when the call is disconnected. Identify the errors. Write the correct code.
+
+  \begin{figure}
+  \begin{lstlisting}
+  hold_played = 0
+  while True:
+    if hold_played >= 5:
+      break
+    if is_busy(callee):
+      play_hold_tone(callee)
+    connect(caller, callee)
+    hold_played = hold_played + 1
+  \end{lstlisting}
+  \end{figure}
+
+marks: 2
+---
+description: |
+  List all possible outputs for this program along with the conditions on integers x and y that leads to that output. Each possible output should occur exactly once in your list. For example, "a" is printed exactly when $x \in [11, \infty]$ and $y \in [-\infty, 5]$.
+
+  \begin{figure}
+  \begin{lstlisting}
+  if x > 10:
+    if y < 6:
+      print("a")
+    elif x < 12:
+      print("b")
+    else:
+      print("c")
+  elif y > 1:
+    if x > 5:
+      print("d")
+    if y > 3:
+      print("e")
+  else:
+    print("e")
+  \end{lstlisting}
+  \end{figure}
+
+marks: 2
+---
+description: |
+  For each of the following lines, write whether the condition is True, False, or an Error in Python.
+
+  \begin{figure}
+  \begin{lstlisting}
+  10 > 12.1
+  "1234" > "234"
+  22 > "33"
+  "123456789"[3:7] < "522"
+  1 == 0 and 1/0 > 1
+  1 != 0 and 1/0 > 1
+  1 == 0 or 1/0 > 1
+  1 != 0 or 1/0 > 1
+  \end{lstlisting}
+  \end{figure}
+
+marks: 2
+---
+description: |
+  Consider the following fuction:
+
+  \begin{figure}
+  \begin{lstlisting}
+  def foo(x, y):
+    if x:
+      if y:
+        print("a")
+      else:
+        print("b")
+    elif not y:
+      print("c")
+    elif not x:
+      print("d")
+    else:
+      print("e")
+  \end{lstlisting}
+  \end{figure}
+
+  What should be the value of x and y to print the following? If it is not possible to print it, state and explain why.
+
+  \begin{itemize}
+  \item a
+  \item b
+  \item c
+  \item d
+  \item e
+  \end{itemize}
+
+marks: 1
+---
+description: |
+  Explain why the following two fragments of code are not equivalent (x and y are some Boolean values). Write a fragment of code equivalent to the first one without using nested if (or other nested blocks).
+
+  \begin{figure}
+  \begin{subfigure}[b]{0.3\textwidth}
+  \begin{lstlisting}
+  if x:
+    if y:
+      print("a")
+    else:
+      print("b")
+  else:
+    print("c")
+  \end{lstlisting}
+  \end{subfigure}%
+  \begin{subfigure}[b]{.3\textwidth}
+  \begin{lstlisting}
+  if x and y:
+    print("a")
+  if not y:
+    print("b")
+  else:
+    print("c")
+  \end{lstlisting}
+  \end{subfigure}
+  \end{figure}
+
+
+marks: 1
+---
+description: |
+  Write a function that takes a list of integers and a function on integers and returns the element in the list that maximizes the function. For example, if the list is \lstinline{[-1, 1, -10, 5]} and the function is \lstinline{abs}, then the function should return \lstinline{-10}. For the empty list, the function should return \lstinline{None}.
+
+marks: 2

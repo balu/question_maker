@@ -4,14 +4,14 @@ description: |
 
   \begin{lstlisting}
   x = 1
-  x = x + 1
   y = x - 1
+  x = x + 1
   print(x, y)
   \end{lstlisting}
 
 options:
-  - \lstinline{2 1}
   - \lstinline{2 0}
+  - \lstinline{2 1}
   - \lstinline{2 2}
   - \lstinline{1 1}
 
@@ -97,7 +97,7 @@ description: |
   What is the output of the following code?
 
   \begin{lstlisting}
-  x = 2
+  x = 20
   if x > 3:
       print(">")
   else:
@@ -116,7 +116,7 @@ description: |
   What is the output of the following code?
 
   \begin{lstlisting}
-  x = 2
+  x = 20
   if x > 3:
       print(">")
   print("<")
@@ -209,7 +209,7 @@ options:
 marks: 1
 ---
 description: |
-  What is the result of \lstinline{[2, 3] + [4, 5]}
+  What is the result of \lstinline{[2, 3] + [4, 5]}?
 
 options:
   - \lstinline{[2, 3, 4, 5]}
@@ -235,16 +235,39 @@ description: |
 
   \begin{lstlisting}
   x = 1
-  x = x + 1
-  y = x - 1
-  print(x, y)
+  s = 0
+  while x < 10:
+    if x % 2 == 0:
+      s = s + x
+    else:
+      s = s + 1
+    x = x + 1
+  print(s)
   \end{lstlisting}
 
 options:
-  - \lstinline{2 1}
-  - \lstinline{2 0}
-  - \lstinline{2 2}
-  - \lstinline{1 1}
+  - \lstinline{25}
+  - \lstinline{45}
+  - \lstinline{20}
+  - \lstinline{10}
+
+marks: 1
+---
+description: |
+  What is the output of the following code?
+
+  \begin{lstlisting}
+  s = 0
+  for x in range(10):
+      s = s + x
+  print(s)
+  \end{lstlisting}
+
+options:
+  - \lstinline{45}
+  - \lstinline{9}
+  - \lstinline{Error}
+  - \lstinline{10}
 
 marks: 1
 ---
@@ -253,16 +276,18 @@ description: |
 
   \begin{lstlisting}
   x = 1
-  x = x + 1
-  y = x - 1
-  print(x, y)
+  s = 0
+  while x < 10:
+    s = s + x
+    x = x + 1
+  print(s)
   \end{lstlisting}
 
 options:
-  - \lstinline{2 1}
-  - \lstinline{2 0}
-  - \lstinline{2 2}
-  - \lstinline{1 1}
+  - \lstinline{45}
+  - \lstinline{Error}
+  - \lstinline{0}
+  - \lstinline{9}
 
 marks: 1
 ---
@@ -270,17 +295,17 @@ description: |
   What is the output of the following code?
 
   \begin{lstlisting}
-  x = 1
-  x = x + 1
-  y = x - 1
-  print(x, y)
+  x = 3
+  while x < 8:
+    x = x + x
+  print(x)
   \end{lstlisting}
 
 options:
-  - \lstinline{2 1}
-  - \lstinline{2 0}
-  - \lstinline{2 2}
-  - \lstinline{1 1}
+  - \lstinline{12}
+  - \lstinline{25}
+  - \lstinline{50}
+  - \lstinline{6}
 
 marks: 1
 ---
@@ -288,17 +313,19 @@ description: |
   What is the output of the following code?
 
   \begin{lstlisting}
-  x = 1
-  x = x + 1
-  y = x - 1
-  print(x, y)
+  x = "foo"
+  if x < "bar":
+    y = "baz"
+  else:
+    y = "far"
+  print(y)
   \end{lstlisting}
 
 options:
-  - \lstinline{2 1}
-  - \lstinline{2 0}
-  - \lstinline{2 2}
-  - \lstinline{1 1}
+  - \lstinline{far}
+  - \lstinline{baz}
+  - \lstinline{foo}
+  - \lstinline{bar}
 
 marks: 1
 ---
@@ -306,17 +333,17 @@ description: |
   What is the output of the following code?
 
   \begin{lstlisting}
-  x = 1
-  x = x + 1
-  y = x - 1
-  print(x, y)
+  x = 3
+  for x in range(10):
+    x = x + x
+  print(x)
   \end{lstlisting}
 
 options:
-  - \lstinline{2 1}
-  - \lstinline{2 0}
-  - \lstinline{2 2}
-  - \lstinline{1 1}
+  - \lstinline{18}
+  - \lstinline{90}
+  - \lstinline{9}
+  - \lstinline{Error}
 
 marks: 1
 ---
@@ -324,35 +351,22 @@ description: |
   What is the output of the following code?
 
   \begin{lstlisting}
-  x = 1
-  x = x + 1
-  y = x - 1
-  print(x, y)
+  def f(x, y):
+    if x:
+      if y:
+        print("xy")
+    elif y:
+      print("y")
+    else:
+      print("z")
+  print(f(True, True))
   \end{lstlisting}
 
 options:
-  - \lstinline{2 1}
-  - \lstinline{2 0}
-  - \lstinline{2 2}
-  - \lstinline{1 1}
-
-marks: 1
----
-description: |
-  What is the output of the following code?
-
-  \begin{lstlisting}
-  x = 1
-  x = x + 1
-  y = x - 1
-  print(x, y)
-  \end{lstlisting}
-
-options:
-  - \lstinline{2 1}
-  - \lstinline{2 0}
-  - \lstinline{2 2}
-  - \lstinline{1 1}
+  - \lstinline{xy}
+  - \lstinline{xyy}
+  - \lstinline{xyz}
+  - \lstinline{yz}
 
 marks: 1
 ---
@@ -418,6 +432,6 @@ description: |
 marks: 2
 ---
 description: |
-  Write a program that takes an integer \lstinline{n} as input, and prints $\sum_{i=1}^n i^4$.
+  Write a program that takes an integer \lstinline{n} as input, and prints the result of the summation: $\sum_{i=1}^n i^4$.
 
 marks: 3

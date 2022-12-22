@@ -3,10 +3,22 @@ description: |
   What is the result of the following code?
 
   \begin{lstlisting}
-  a = 100
-  b = 150
-  print(a and b)
+  x = 1
+  def f(x):
+    x = 5
+    def g(y):
+      global x
+      return y + x
+    return x + g(x)
+  print(f(x))
   \end{lstlisting}
+
+options:
+  - \lstinline{11}
+  - \lstinline{2}
+  - \lstinline{15}
+  - \lstinline{13}
+  - \lstinline{14}
 
 marks: \half
 ---
@@ -32,13 +44,7 @@ options:
 marks: \half
 ---
 description: |
-  Given two lists of integers (of possibly unequal lengths), write a function to create a third list to find the sum of the two lists. 
-  The third list size is the size of the shorter of the two input lists.
-  x1 = [1, 2, 3]
-  x2 = [2, 4, 6, 8]
-
-  Output should be: [3, 6, 9]
-
+  Given two lists of integers (of possibly unequal lengths), write a function to create a third list to find the sum of the two lists. The third list size is the size of the shorter of the two input lists. If \lstinline{x1 = [1, 2, 3]} and \lstinline{x2 = [2, 4, 6, 8]}, then the output should be: \lstinline{[3, 6, 9]}
 
 marks: 1
 ---
@@ -110,14 +116,21 @@ description: |
   What is the result of the following code?
 
   \begin{lstlisting}
-  count = 0
-  for i in range(5, 8):
-      for j in range(2, i):
-          count = count + 1
-          if i%j == 0:
-              break
-  print(count)
+  x = 10
+  def f(x):
+    def g(x):
+      def h(x):
+        return x
+      return h(x) + x
+    return g(x) + x
+  print(f(x))
   \end{lstlisting}
+
+options:
+  - \lstinline{30}
+  - \lstinline{20}
+  - \lstinline{10}
+  - \lstinline{Error}
 
 marks: \half
 ---
@@ -170,15 +183,10 @@ options:
 marks: \half
 ---
 description: |
-Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n).
-If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair and each of a and b are called amicable numbers.
+  Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n). If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair and each of a and b are called amicable numbers.
 
-For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+  For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 
-Write a program to evaluate the sum of all the amicable numbers under 1000. 
-One mark for correctly writing the function d. One mark for checking for amicability. One mark for finding the sum of amicable numbers under 1000.
+  Write a program to evaluate the sum of all the amicable numbers under 1000. One mark for correctly writing the function d. One mark for checking for amicability. One mark for finding the sum of amicable numbers under 1000.
 
 marks: 3
-
-
-

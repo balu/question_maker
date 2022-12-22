@@ -26,6 +26,9 @@ def preamble(outfile):
     \usepackage{fontspec}
     \usepackage{comment}
     \usepackage{savetrees}
+    \usepackage{float}
+    \floatplacement{figure}{H}
+    \usepackage{caption,subcaption}
 
     \renewcommand{\arraystretch}{1.6}
     \usepackage{setspace}

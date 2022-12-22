@@ -1,0 +1,262 @@
+---
+description: |
+  What is the type of \lstinline{[0, 3.0, "Hello"][1:][0]}?
+
+options:
+  - \lstinline{float}
+  - \lstinline{int}
+  - \lstinline{tuple}
+  - \lstinline{list}
+
+marks: \half
+---
+description: |
+  What is the type of \lstinline{(1,)}?
+
+options:
+  - \lstinline{tuple}
+  - \lstinline{int}
+  - \lstinline{float}
+  - \lstinline{list}
+
+marks: \half
+---
+description: |
+  What is the type of \lstinline{(1, 2, 3)[1:]}?
+
+options:
+  - \lstinline{tuple}
+  - \lstinline{int}
+  - \lstinline{float}
+  - \lstinline{list}
+
+marks: \half
+---
+description: |
+  What is the value of \verb|f"{'This'} is {'ES112.'}"|?
+
+options:
+  - \lstinline{"This is ES112."}
+  - \lstinline{Error}
+  - \lstinline{None}
+  - Depends on values of variables This and ES112.
+
+marks: \half
+---
+description: |
+  What is the value of \lstinline{"1-2-3".split("-")}?
+
+options:
+  - \lstinline{["1", "2", "3"]}
+  - \lstinline{[1, 2, 3]}
+  - \lstinline{123}
+  - \lstinline{(1, 2, 3)}
+
+marks: \half
+---
+description: |
+  What is the output?
+
+  \begin{figure}
+  \begin{lstlisting}
+  x, y = 5, 3
+  if x > y:
+      x = 2*x + y
+      y = 14
+  if x < y:
+      x = x - y
+  else:
+      x = x + y
+  print(x, y)
+  \end{lstlisting}
+  \end{figure}
+
+options:
+  - \lstinline{-1 14}
+  - \lstinline{27 14}
+  - \lstinline{13 14}
+  - \lstinline{5 3}
+
+marks: \half
+---
+description: |
+  What CANNOT be printed by the following function? Select all that apply. Explain your answer.
+
+  \begin{figure}
+  \begin{lstlisting}
+  def foo(x, y):
+      if x:
+          if y:
+              print("a")
+          else:
+              print("b")
+      elif not y or x:
+          print("c")
+      elif not x and y:
+          print("d")
+      else:
+          print("e")
+  \end{lstlisting}
+  \end{figure}
+
+options:
+  - \lstinline{d}
+  - \lstinline{a}
+  - \lstinline{b}
+  - \lstinline{c}
+  - \lstinline{e}
+
+marks: 1
+---
+description: |
+  What CANNOT be printed by the following function? Select all that apply. Explain your answer.
+
+  \begin{figure}
+  \begin{lstlisting}
+  def foo(x, y):
+      if x:
+          if y:
+              print("a")
+          else:
+              print("b")
+      elif not y or x:
+          print("c")
+      elif not x or not y:
+          print("d")
+      else:
+          print("e")
+  \end{lstlisting}
+  \end{figure}
+
+options:
+  - \lstinline{e}
+  - \lstinline{a}
+  - \lstinline{b}
+  - \lstinline{c}
+  - \lstinline{d}
+
+marks: 1
+---
+description: |
+  What does the following print?
+
+  \begin{figure}
+  \begin{lstlisting}
+  def f(y):
+      def g(x):
+          y.append(x)
+          return y
+      return g
+  xs = []
+  g1, g2 = f(xs), f(xs)
+  print(g1(1), g2(1))
+  \end{lstlisting}
+  \end{figure}
+
+options:
+  - \lstinline{[1, 1] [1, 1]}
+  - \lstinline{[1] [1]}
+  - \lstinline{[1, 1] [1]}
+  - \lstinline{[1] [1, 1]}
+
+marks: \half
+---
+description: |
+  What is the output?
+
+  \begin{figure}
+  \begin{lstlisting}
+  def f(xs, ys):
+      n = min(len(xs), len(ys)) - 1
+      for i, x in enumerate(xs):
+          z = x * ys[n-i]
+      return z
+  xs = list(range(1, 10))
+  ys = list(range(10, 1, -1))
+  print(f(xs, ys))
+  \end{lstlisting}
+  \end{figure}
+
+options:
+  - \lstinline{90}
+  - \lstinline{285}
+  - \lstinline{100}
+  - \lstinline{89}
+  - \lstinline{284}
+  - \lstinline{99}
+
+marks: \half
+---
+description: |
+  You want to apply a 10 percent discount to price. Is \lstinline{price = price * 0.9} a good way to do this in Python?
+
+marks: \half
+---
+description: |
+  What is \lstinline{1 > 2 == 3 > 5}. In Python, == takes precedence over ordering operations.
+
+options:
+  - \lstinline{False}
+  - \lstinline{True}
+  - \lstinline{Error}
+  - \lstinline{None}
+
+marks: \half
+---
+description: |
+  Write a function that takes a list of integers as input and returns one of the mode(s). i.e., a number that occurs the most often in the list. Explain how your function works on the list [2, 2, 3, 2, 2, 3, 5, 5, 2, 4].
+
+marks: 2
+---
+description: |
+  Write a function that computes the definite integral of a given function i.e., $\int_a^b f(x)\,dx$. You may use the Riemann definition (approximating area by breaking into small rectangular pieces).
+
+  Following is a sample usage for the function definite\_integral that you should write.
+
+  \begin{figure}
+  \begin{lstlisting}
+  def sq(x):
+      return x*x + 2
+  isq = definite_integral(sq)
+  print(isq(a=0, b=4, dx=0.001))
+  \end{lstlisting}
+  \end{figure}
+
+marks: 2
+---
+description: |
+  Why doesn't Python allow hyphens in variables? For example, a variable can't be named \lstinline{x-value}. Why?
+
+marks: 1
+---
+description: |
+  The following function was written to compute the least common multiple of two numbers. List the errors in the function. Write a correct version.
+
+  \begin{figure}
+  \begin{lstlisting}
+  def lcm(n, m):
+      for i in range(min(n, m), n*m):
+          if n % i == 0 and m % i == 0:
+              return i
+  \end{lstlisting}
+  \end{figure}
+
+marks: 2
+---
+description: |
+  The following function was written to compute the index of the second occurence of x in the list xs and None if not. List the errors in the function. Write a correct version.
+
+  \begin{lstlisting}
+  def second_occurrence(xs, x):
+      first_occurrence = None
+      second_occurrence = None
+      for i, y in enumerate(xs):
+          if y == x:
+              if first_occurrence == None:
+                  first_occurrence = i
+              else:
+                  second_occurrence = i
+      return second_occurrence
+  \end{lstlisting}
+
+marks: 2
