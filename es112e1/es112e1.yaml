@@ -1,5 +1,26 @@
 ---
 description: |
+  What is printed?
+
+  \begin{lstlisting}
+  x = 3
+  def f(y):
+      global x
+      return x + y
+      x = 5
+  print(f(3), end = " ")
+  print(x)
+  \end{lstlisting}
+
+options:
+  - \lstinline{6 3}
+  - \lstinline{6 5}
+  - \lstinline{8 3}
+  - \lstinline{8 5}
+
+marks: \half
+---
+description: |
   What is the type of \lstinline{[0, 3.0, "Hello"][1:][0]}?
 
 options:
@@ -188,7 +209,7 @@ options:
 marks: \half
 ---
 description: |
-  You want to apply a 10 percent discount to price. Is \lstinline{price = price * 0.9} a good way to do this in Python?
+  You want to apply a 10 percent discount to price. Is \lstinline{price = price * 0.9} a good way to do this in Python? Explain.
 
 marks: \half
 ---
@@ -227,7 +248,7 @@ marks: 2
 description: |
   Why doesn't Python allow hyphens in variables? For example, a variable can't be named \lstinline{x-value}. Why?
 
-marks: 1
+marks: \half
 ---
 description: |
   The following function was written to compute the least common multiple of two numbers. List the errors in the function. Write a correct version.
